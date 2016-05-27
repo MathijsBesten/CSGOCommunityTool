@@ -16,6 +16,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using System.Web;
+
 
 namespace CSGOCommunityTool.Funtions
 {
@@ -69,7 +71,8 @@ namespace CSGOCommunityTool.Funtions
             {
                 HtmlDocument htmlDoc = new HtmlDocument();
                 htmlDoc.LoadHtml(notCorrectedString);
-                string betterSting = htmlDoc.DocumentNode.InnerHtml;
+                string betterSting = htmlDoc.DocumentNode.InnerText;
+                betterSting = System.Net.WebUtility.HtmlDecode(betterSting);
                 return betterSting;
             }
             else
