@@ -9,11 +9,12 @@ using System.Net;
 using SteamWebAPI;
 using CSGOCommunityTool;
 
+
 namespace CSGOCommunityTool.Steam
 {
     class login
     {
-        static void Main(string[] args)
+        static void steamLogin()
         {
             SteamAPISession session = new SteamAPISession();
 
