@@ -13,22 +13,18 @@ namespace CSGOCommunityTool.Steam
 {
     class login
     {
-        static void Main(string[] args)
+        public static void steamLogin(string username, string password)
         {
             SteamAPISession session = new SteamAPISession();
-
-            Console.Write("Username: ");
-            String username = Console.ReadLine();
-            Console.Write("Password: ");
-            String password = Console.ReadLine();
+            var serverinfo = session.GetServerInfo();
 
             SteamAPISession.LoginStatus status = session.Authenticate(username, password);
             if (status == SteamAPISession.LoginStatus.SteamGuard)
             {
                 Console.Write("SteamGuard code: ");
-                String code = Console.ReadLine();
+                Windows.SteamGuard.GetSteamGuardCode(username,password);
 
-                status = session.Authenticate(username, password, code);
+                //status = session.Authenticate(username, password, code);
             }
 
             if (status == SteamAPISession.LoginStatus.LoginSuccessful)
