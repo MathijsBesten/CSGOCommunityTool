@@ -91,6 +91,18 @@
     </ApplicationDefinition>
     <Compile Include="Steam\Login.cs" />
     <Compile Include="Steam\SteamAPISession.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <Compile Include="displays\steamguard login\SteamGuard.xaml.cs">
+      <DependentUpon>SteamGuard.xaml</DependentUpon>
+    </Compile>
+=======
+>>>>>>> parent of e20a8f1... chaged login script added steamguard
+=======
+>>>>>>> parent of e20a8f1... chaged login script added steamguard
+=======
+>>>>>>> parent of e20a8f1... chaged login script added steamguard
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,6 +116,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <Page Include="displays\steamguard login\SteamGuard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+=======
+>>>>>>> parent of e20a8f1... chaged login script added steamguard
+=======
+>>>>>>> parent of e20a8f1... chaged login script added steamguard
+=======
+>>>>>>> parent of e20a8f1... chaged login script added steamguard
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
