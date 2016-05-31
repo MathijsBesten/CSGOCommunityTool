@@ -7,7 +7,6 @@ using CSGOCommunityTool;
 using System.IO;
 using System.Net;
 using SteamWebAPI;
-using CSGOCommunityTool;
 
 
 namespace CSGOCommunityTool.Steam
