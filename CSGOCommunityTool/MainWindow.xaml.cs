@@ -57,15 +57,8 @@ namespace CSGOCommunityTool
 
                 }
                 count++;
-            }
-            
-        }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            string Userusername = Username.Text;
-            string Userpassword = Password.Password;
-            Steam.login.steamLogin(Userusername,Userpassword);
+            }
         }
     }
 }
