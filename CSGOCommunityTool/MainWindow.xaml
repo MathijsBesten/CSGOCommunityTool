@@ -55,5 +55,6 @@
         <Rectangle HorizontalAlignment="Left" Height="100" Margin="13,-260,0,0" Stroke="Black" VerticalAlignment="Top" Width="1227" Grid.ColumnSpan="3" Fill="#FFE4DBD9"/>
         <Image x:Name="avatarBox" Grid.Column="2" HorizontalAlignment="Left" Height="80" Margin="333,-250,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="steamNameBox" TextAlignment="Right" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="28,-250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
+        <Image x:Name="logoBox" Source="Files\Logo.png" HorizontalAlignment="Left" Height="80" Margin="20,-250,0,0" VerticalAlignment="Top" Width="85"/>
     </Grid>
 </Window>
