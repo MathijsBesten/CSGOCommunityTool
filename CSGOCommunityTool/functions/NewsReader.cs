@@ -16,6 +16,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using System.Net;
+using CSGOCommunityTool.functions;
 
 namespace CSGOCommunityTool.Funtions
 {
@@ -39,42 +41,28 @@ namespace CSGOCommunityTool.Funtions
                         {
                             case "title":
                                 string titleHTML = reader.ReadString();
-                                title = stringcorrector(titleHTML);
+                                title = HTMLParse.stringcorrector(titleHTML);
                                 break;
                             case "link":
                                 string linkHTML = reader.ReadString();
-                                link = stringcorrector(link);
+                                link = HTMLParse.stringcorrector(link);
                                 break;
                             case "pubDate":
                                 string pubDateHTML = reader.ReadString();
-                                pubDate = stringcorrector(pubDateHTML);
+                                pubDate = HTMLParse.stringcorrector(pubDateHTML);
                                 break;
                             case "description":
                                 string descriptionHTML = reader.ReadString();
-                                description = stringcorrector(descriptionHTML);
+                                description = HTMLParse.stringcorrector(descriptionHTML);
                                 break;
                             case "content:encoded":
                                 string contentHTML = reader.ReadString();
-                                content = stringcorrector(contentHTML);
+                                content = HTMLParse.stringcorrector(contentHTML);
                                 allItems.Add(new List<string> {title,link,pubDate,description,content});
                                 break;
                         }
                     }
                 }
-            }
-        }
-        public static string stringcorrector(string notCorrectedString)
-        {
-            if (notCorrectedString != null)
-            {
-                HtmlDocument htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(notCorrectedString);
-                string betterSting = htmlDoc.DocumentNode.InnerHtml;
-                return betterSting;
-            }
-            else
-            {
-                return notCorrectedString;
             }
         }
     }
