@@ -8,6 +8,7 @@ using System.IO;
 using System.Net;
 using SteamKit2;
 using System.Security.Cryptography;
+using CSGOCommunityTool;
 
 namespace CSGOCommunityTool.Steam
 {
@@ -15,26 +16,18 @@ namespace CSGOCommunityTool.Steam
     {
         static string user, pass, authCode, twoFactorAuth;
 
+        public static string useridsteam = "";
         static SteamClient steamClient;
         static CallbackManager manager;
         static SteamUser steamUser;
         static bool isRunning = false;
 
-        static void Login(string[] args)
+        public static void Login(string enterusername, string enterpassword,string enterauthCode)
         {
-            Console.Title = "A bot";
-            Console.WriteLine("CTRL+C quits the program.");
-
-            Console.Write("Username: ");
-            user = Console.ReadLine();
-            Console.Write("Password: ");
-            pass = Console.ReadLine();
+            user = enterusername;
+            pass = enterpassword;
 
             SteamLogIn();
-
-            Console.WriteLine("authcode");
-            //authcode = Console.ReadLine();
-
         }
         static void SteamLogIn()
         {
@@ -61,7 +54,6 @@ namespace CSGOCommunityTool.Steam
             {
                 manager.RunWaitCallbacks(TimeSpan.FromSeconds(1));
             }
-            Console.ReadKey();
         }
         static void OnConnected(SteamClient.ConnectedCallback callback)
         { 
@@ -113,19 +105,21 @@ namespace CSGOCommunityTool.Steam
                     Console.Write("Please enter the auth code sent to the email at {0}: ", callback.EmailDomain);
                     authCode = Console.ReadLine();
                 }
-
+                useridsteam = callback.ClientSteamID.ToString();
                 return;
             }
 
-            if (callback.Result != EResult.OK)
+            if (callback.Result != EResult.OK)  
             {
                 Console.WriteLine("Unable to logon to Steam: {0} / {1}", callback.Result, callback.ExtendedResult);
+                var iets = new SteamID(callback.ClientSteamID.ToString()).ToString() ;
 
-                isRunning = false;
+                //string steamID = iets.Substring(iets.LastIndexOf(",") + 1);
                 return;
             }
-
+            var ietss = new SteamID(callback.ClientSteamID.ToString());
             Console.WriteLine("Successfully logged on!");
+            return;
 
             // at this point, we'd be able to perform actions on Steam
         }

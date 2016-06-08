@@ -56,5 +56,14 @@
         <Image x:Name="avatarBox" Grid.Column="2" HorizontalAlignment="Left" Height="80" Margin="333,-250,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="steamNameBox" TextAlignment="Right" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="28,-250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
         <Image x:Name="logoBox" Source="Files\Logo.png" HorizontalAlignment="Left" Height="80" Margin="20,-250,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBox x:Name="UsernameBox" HorizontalAlignment="Left" Height="44" Margin="137,-214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontSize="26.667"/>
+        <Label x:Name="label" Content="Username" HorizontalAlignment="Left" Margin="137,-250,0,0" VerticalAlignment="Top" Height="36" Width="182" FontSize="21.333" FontFamily="Comic Sans MS"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="339,-214,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="44" Width="170"/>
+        <Label x:Name="label1" Grid.ColumnSpan="2" Content="Password" HorizontalAlignment="Left" Margin="339,-246,0,0" VerticalAlignment="Top" Width="170" Height="32" FontSize="18.667" FontFamily="Comic Sans MS"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Button" Content="Login/logoff" Grid.Column="2" HorizontalAlignment="Left" Margin="28,-202,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="authCodeBox" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="129,-214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" RenderTransformOrigin="0.268,-0.07" FontFamily="Comic Sans MS" FontSize="16"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="authCode" Grid.Column="1" HorizontalAlignment="Left" Margin="129,-246,0,0" VerticalAlignment="Top" Width="178" Height="32" FontSize="18.667" FontFamily="Comic Sans MS"/>
     </Grid>
 </Window>

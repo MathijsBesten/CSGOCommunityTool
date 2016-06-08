@@ -97,6 +97,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Steam\GetSteamID64.cs" />
+    <Compile Include="functions\HTMLDownloader.cs" />
     <Compile Include="functions\HTMLParse.cs" />
     <Compile Include="functions\JSONReader.cs" />
     <Compile Include="functions\LocalConfigFile.cs" />
