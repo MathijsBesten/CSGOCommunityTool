@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CSGOCommunityTool.functions;
+using System.IO;
 
 namespace CSGOCommunityTool.Menu
 {
@@ -85,6 +87,13 @@ namespace CSGOCommunityTool.Menu
         void ISwitchable.UtilizeState(object state)
         {
             //
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            var sad = ProfileSaver_ProfileReader.profileMaker("76561198035130499");
+            var steamID = File.ReadLines(ProfileSaver_ProfileReader.fullFilePath);
+            Switcher.Switch(new ProfileCSGOStats());
         }
     }
 }

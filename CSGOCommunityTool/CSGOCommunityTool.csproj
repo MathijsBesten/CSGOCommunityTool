@@ -115,9 +115,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="functions\ProfileSaver_ProfileReader.cs" />
     <Compile Include="ISwitchable.cs" />
     <Compile Include="Menu\LoginNews.xaml.cs">
       <DependentUpon>LoginNews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\ProfileCSGOStats.xaml.cs">
+      <DependentUpon>ProfileCSGOStats.xaml</DependentUpon>
     </Compile>
     <Compile Include="Steam\GetSteamID64.cs" />
     <Compile Include="functions\HTMLDownloader.cs" />
@@ -131,6 +135,10 @@
       <DependentUpon>SteamGuard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
+    <Page Include="Menu\ProfileCSGOStats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageSwitcher.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
