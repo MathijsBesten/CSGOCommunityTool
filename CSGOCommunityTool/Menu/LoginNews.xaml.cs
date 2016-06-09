@@ -12,26 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CSGOCommunityTool.Steam;
-using System.Net;
 
-namespace CSGOCommunityTool
+namespace CSGOCommunityTool.Menu
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginNewsPage : UserControl, ISwitchable
     {
         public static string LoggedInUser = "";
         public string playerDetailUrl = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=14A21E6B2EC8A4B857AA20CF416B38DE&steamids=";
-        public MainWindow()
+        public LoginNewsPage()
         {
             InitializeComponent();
             int count = 0;
             string steamAPIey = "14A21E6B2EC8A4B857AA20CF416B38DE";
             string testAccount = "76561197988627193"; //OLOFMEISTER BOOSTMEISTER
             string derpysAccount = "76561198035130499"; // Sir derpy           
-           
+
 
 
             Funtions.NewsReader.newsReader();
@@ -67,14 +62,14 @@ namespace CSGOCommunityTool
                 count++;
             }
 
-            
+
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-          Steam.login.Login(UsernameBox.Text, PasswordBox.Password, authCodeBox.Text);
-          string userId = Steam.login.useridsteam;
-            
+            Steam.login.Login(UsernameBox.Text, PasswordBox.Password, authCodeBox.Text);
+            string userId = Steam.login.useridsteam;
+
             //loading picture from account
             var profileInfo = functions.JSONReader.ReadJSON(playerDetailUrl + userId, public_properties.SteamProfile.playerStats, public_properties.SteamProfile.playerStatsEnd); // gets all information about profile
             string avatarImageLink = profileInfo[13].Insert(6, ":");
@@ -85,6 +80,11 @@ namespace CSGOCommunityTool
             steamNameBox.Text = profileInfo[3];
 
             Console.WriteLine();
+        }
+
+        void ISwitchable.UtilizeState(object state)
+        {
+            //
         }
     }
 }

@@ -1,17 +1,11 @@
-﻿<Window x:Class="CSGOCommunityTool.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl x:Class="CSGOCommunityTool.Menu.LoginNewsPage"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSGOCommunityTool"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="0"/>
-            <GradientStop Color="#FFF92929" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        Height="720" Width="1280">
     <Grid HorizontalAlignment="Left" Height="400" VerticalAlignment="Bottom" Width="1240" Margin="10,0,0,20">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -60,10 +54,8 @@
         <Label x:Name="label" Content="Username" HorizontalAlignment="Left" Margin="137,-250,0,0" VerticalAlignment="Top" Height="36" Width="182" FontSize="21.333" FontFamily="Comic Sans MS"/>
         <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="339,-214,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="44" Width="170"/>
         <Label x:Name="label1" Grid.ColumnSpan="2" Content="Password" HorizontalAlignment="Left" Margin="339,-246,0,0" VerticalAlignment="Top" Width="170" Height="32" FontSize="18.667" FontFamily="Comic Sans MS"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="Button" Content="Login/logoff" Grid.Column="2" HorizontalAlignment="Left" Margin="28,-202,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
         <TextBox x:Name="authCodeBox" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="129,-214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" RenderTransformOrigin="0.268,-0.07" FontFamily="Comic Sans MS" FontSize="16"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label x:Name="label3" Content="authCode" Grid.Column="1" HorizontalAlignment="Left" Margin="129,-246,0,0" VerticalAlignment="Top" Width="178" Height="32" FontSize="18.667" FontFamily="Comic Sans MS"/>
     </Grid>
-</Window>
+</UserControl>
