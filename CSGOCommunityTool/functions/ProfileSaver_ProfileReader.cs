@@ -90,7 +90,8 @@ namespace CSGOCommunityTool.functions
         }
         public static void logoutProfile()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "CSGOCommunityTool" + "userdetails.txt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "CSGOCommunityTool" + "\\" +  "userdetails.txt";
+            File.WriteAllText(path, "");
         }
     }
 }
