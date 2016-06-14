@@ -13,8 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CSGOCommunityTool.functions;
+using CSGOCommunityTool.functions;
 using System.IO;
-using SteamWebAPI;
 
 namespace CSGOCommunityTool.Menu
 {
@@ -29,55 +29,74 @@ namespace CSGOCommunityTool.Menu
         {
             InitializeComponent();
             int count = 0;
-            string testAccount = "76561197988627193"; //OLOFMEISTER BOOSTMEISTER
-            string derpysAccount = "76561198035130499"; // Sir derpy           
+            string testAccount = "76561197988627193"; //OLOFMEISTER BOOSTMEISTER        
+            string profile = ProfileSaver_ProfileReader.checkForProfile(); //check if there is anybody logged in
 
-
-
-            Funtions.NewsReader.newsReader();
-            foreach (var item in Funtions.NewsReader.allItems)
-            {
-                foreach (var stringObject in item)
-                {
-                    if (count == 0)
-                    {
-                        newsSpot1.Text = stringObject;
-                    }
-                    else if (count == 1)
-                    {
-                        newsSpot2.Text = stringObject;
-                    }
-                    else if (count == 2)
-                    {
-                        newsSpot3.Text = stringObject;
-                    }
-                    else if (count == 3)
-                    {
-                        newsSpot4.Text = stringObject;
-                    }
-                    else if (count == 4)
-                    {
-                        newsSpot5.Text = stringObject;
-                    }
-                    else if (count == 5)
-                    {
-                        newsSpot6.Text = stringObject;
-                    }
-                }
-                count++;
-            }
+            //Funtions.NewsReader.newsReader();
+            //foreach (var item in Funtions.NewsReader.allItems)
+            //{
+            //    foreach (var stringObject in item)
+            //    {
+            //        if (count == 0)
+            //        {
+            //            newsSpot1.Text = stringObject;
+            //        }
+            //        else if (count == 1)
+            //        {
+            //            newsSpot2.Text = stringObject;
+            //        }
+            //        else if (count == 2)
+            //        {
+            //            newsSpot3.Text = stringObject;
+            //        }
+            //        else if (count == 3)
+            //        {
+            //            newsSpot4.Text = stringObject;
+            //        }
+            //        else if (count == 4)
+            //        {
+            //            newsSpot5.Text = stringObject;
+            //        }
+            //        else if (count == 5)
+            //        {
+            //            newsSpot6.Text = stringObject;
+            //        }
+            //    }
+            //    count++;
+            //}
 
 
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            string userId = steamIDText.Text;
-            var profileInfo = functions.JSONReader.ReadJSON(playerDetailUrl + userId, public_properties.SteamProfile.playerStats, public_properties.SteamProfile.playerStatsEnd); // gets all information about profile
-            string avatarImageLink = profileInfo[13].Insert(6, ":");
-            BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
-            steamNameBox.Text = profileInfo[3];
-            avatarBox.Source = bitmapImage;
+            
+            if (ButtonLoginLogout.Content == "Logout")
+            {
+                ProfileSaver_ProfileReader.logoutProfile();
+                steamNameBox.Text = "";
+                avatarBox.Source = null;
+                ButtonLoginLogout.Content = "Login";
+            }
+            else
+            {
+                if (steamIDText.Text != "")
+                {
+                    string userId = steamIDText.Text;
+                    var profileInfo = functions.JSONReader.ReadJSON(playerDetailUrl + userId, public_properties.SteamProfile.playerStats, public_properties.SteamProfile.playerStatsEnd); // gets all information about profile
+                    string avatarImageLink = profileInfo[13].Insert(6, ":");
+                    BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
+                    steamNameBox.Text = profileInfo[3];
+                    avatarBox.Source = bitmapImage;
+                    ButtonLoginLogout.Content = "Logout";
+                }
+                else
+                {
+                    MessageBox.Show("You did not enter a steamID");
+                }
+
+            }
+
 
             Console.WriteLine();
         }

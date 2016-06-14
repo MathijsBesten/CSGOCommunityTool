@@ -123,16 +123,14 @@
     <Compile Include="Menu\ProfileCSGOStats.xaml.cs">
       <DependentUpon>ProfileCSGOStats.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Steam\GetSteamID64.cs" />
     <Compile Include="functions\HTMLDownloader.cs" />
     <Compile Include="functions\HTMLParse.cs" />
     <Compile Include="functions\JSONReader.cs" />
     <Compile Include="functions\LocalConfigFile.cs" />
     <Compile Include="public properties\SteamProfile.cs" />
     <Compile Include="Steam\loginFunction.cs" />
-    <Compile Include="Steam\SteamAPISession.cs" />
-    <Compile Include="displays\steamguard login\SteamGuard.xaml.cs">
-      <DependentUpon>SteamGuard.xaml</DependentUpon>
+    <Compile Include="displays\steam login\SteamLogin.xaml.cs">
+      <DependentUpon>SteamLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
     <Page Include="Menu\ProfileCSGOStats.xaml">
@@ -152,7 +150,7 @@
       <DependentUpon>PageSwitcher.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="displays\steamguard login\SteamGuard.xaml">
+    <Page Include="displays\steam login\SteamLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

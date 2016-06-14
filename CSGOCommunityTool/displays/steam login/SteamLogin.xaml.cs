@@ -24,13 +24,10 @@ namespace CSGOCommunityTool.Windows
             InitializeComponent();
 
         }
-        public static void GetSteamGuardCode(string username, string password)
-        {
-            var codewindows = new SteamGuard();
-        }
+
         private void SteamGuardLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
