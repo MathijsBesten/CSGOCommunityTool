@@ -4,7 +4,6 @@ using System.IO;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json.Linq;
-using PortableSteam.Fluent;
 using System.Drawing;
 
 namespace SteamWebAPI

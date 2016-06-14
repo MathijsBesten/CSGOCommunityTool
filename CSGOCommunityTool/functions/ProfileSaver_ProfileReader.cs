@@ -41,7 +41,7 @@ namespace CSGOCommunityTool.functions
                 else
                 {
                     var saveToFile = checkForSteamIDInFile(steamID);
-                    return 1; // steamID has been checked and steamID is in file
+                    return saveToFile; // steamID has been checked and steamID is in file
                 }
             }
             return 0; // not posible, this for the future
