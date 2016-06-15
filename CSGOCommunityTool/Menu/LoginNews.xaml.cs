@@ -70,7 +70,6 @@ namespace CSGOCommunityTool.Menu
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            
             if (ButtonLoginLogout.Content == "Logout")
             {
                 ProfileSaver_ProfileReader.logoutProfile();
