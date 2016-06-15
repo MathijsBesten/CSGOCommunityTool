@@ -1,0 +1,16 @@
+﻿<Window x:Name="Login_to_steam" x:Class="CSGOCommunityTool.displays.loginScreen.steamLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSGOCommunityTool.displays.loginScreen"
+        mc:Ignorable="d"
+        Title="Login to steam" Height="267" Width="329">
+    <Grid>
+        <Label x:Name="SteamIDInfo" Content="Please enter your SteamID in the box below&#xA;your steamID looks something like 76561198035130499 " HorizontalAlignment="Left" VerticalAlignment="Top" Width="311" Margin="10,10,0,0" Height="50"/>
+        <Label x:Name="SteamIDTitle" Content="Your SteamID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,141,0,0" Width="130"/>
+        <Button x:Name="SteamLoginButton" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,190,0,0" Click="SteamGuardLogin_Click"/>
+        <TextBox x:Name="SteamID" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button x:Name="linkToProfileButton" Content="find it on http://steamcommunity.com/my/profile" HorizontalAlignment="Left" VerticalAlignment="Top" Width="301" Margin="10,65,0,0" Click="linkToProfileButton_click"/>
+    </Grid>
+</Window>

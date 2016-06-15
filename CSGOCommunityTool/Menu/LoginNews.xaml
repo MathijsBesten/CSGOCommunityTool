@@ -47,13 +47,10 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </ScrollViewer>
         </Border>
         <Rectangle HorizontalAlignment="Left" Height="100" Margin="13,-260,0,0" Stroke="Black" VerticalAlignment="Top" Width="1227" Grid.ColumnSpan="3" Fill="#FFE4DBD9"/>
-        <Image x:Name="avatarBox" Grid.Column="2" HorizontalAlignment="Left" Height="80" Margin="333,-250,0,0" VerticalAlignment="Top" Width="80"/>
-        <TextBox x:Name="steamNameBox" TextAlignment="Right" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="28,-250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
+        <Image x:Name="avatarBox" Grid.Column="2" HorizontalAlignment="Left" Height="80" Margin="318,-250,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="steamNameBox" TextAlignment="Right" Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="53,-250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
         <Image x:Name="logoBox" HorizontalAlignment="Left" Height="80" Margin="20,-250,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label x:Name="steamIDInfo" Content="Steam ID" HorizontalAlignment="Left" Margin="137,-250,0,0" VerticalAlignment="Top" Height="36" Width="182" FontSize="21.333" FontFamily="Comic Sans MS"/>
-        <Button x:Name="ButtonLoginLogout" Content="Login" Grid.Column="2" HorizontalAlignment="Left" Margin="207,-202,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
-        <Button x:Name="button" Content="Show stats" Grid.Column="2" HorizontalAlignment="Left" Margin="127,-196,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBox x:Name="steamIDText"  HorizontalAlignment="Left" Height="20" Margin="137,-210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="228"/>
+        <Button x:Name="ButtonLoginLogout" Content="Login" Grid.Column="2" HorizontalAlignment="Left" Margin="232,-202,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="0" Margin="-125,-385,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="5"/>
     </Grid>
 </UserControl>

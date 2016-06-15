@@ -129,7 +129,7 @@
     <Compile Include="functions\LocalConfigFile.cs" />
     <Compile Include="public properties\SteamProfile.cs" />
     <Compile Include="Steam\loginFunction.cs" />
-    <Compile Include="displays\steam login\SteamLogin.xaml.cs">
+    <Compile Include="displays\loginScreen\SteamLogin.xaml.cs">
       <DependentUpon>SteamLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
@@ -150,7 +150,7 @@
       <DependentUpon>PageSwitcher.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="displays\steam login\SteamLogin.xaml">
+    <Page Include="displays\loginScreen\SteamLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,7 +189,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
