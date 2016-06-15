@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CSGOCommunityTool.functions;
-using CSGOCommunityTool.functions;
 using System.IO;
 
 namespace CSGOCommunityTool.Menu
@@ -88,6 +87,7 @@ namespace CSGOCommunityTool.Menu
                     steamNameBox.Text = profileInfo[3];
                     avatarBox.Source = bitmapImage;
                     ButtonLoginLogout.Content = "Logout";
+                    Switcher.Switch(new ProfileCSGOStats());
                 }
                 else
                 {
@@ -108,6 +108,7 @@ namespace CSGOCommunityTool.Menu
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine(); ;
+
             Switcher.Switch(new ProfileCSGOStats());
         }
     }

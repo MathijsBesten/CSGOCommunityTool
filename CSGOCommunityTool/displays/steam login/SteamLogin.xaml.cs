@@ -22,7 +22,7 @@ namespace CSGOCommunityTool.Windows
         public SteamGuard()
         {
             InitializeComponent();
-
+           
         }
 
         private void SteamGuardLogin_Click(object sender, RoutedEventArgs e)

@@ -10,8 +10,8 @@
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="100" Margin="25,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="1227" Fill="#FFE4DBD9"/>
         <Grid HorizontalAlignment="Left" Height="564" Margin="25,115,0,0" VerticalAlignment="Top" Width="1227"/>
-        <Image x:Name="avatarBox" HorizontalAlignment="Left" Height="80" Margin="1165,15,0,0" VerticalAlignment="Top" Width="80"/>
-        <TextBox x:Name="steamNameBox" TextAlignment="Right" HorizontalAlignment="Left" Height="30" Margin="860,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
-        <Button x:Name="Button" Content="Login/logoff" HorizontalAlignment="Left" Margin="860,63,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
+        <Image x:Name="avatarBox2" HorizontalAlignment="Left" Height="80" Margin="1165,15,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="steamNameBox2" TextAlignment="Right" HorizontalAlignment="Left" Height="30" Margin="860,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
+        <Button x:Name="Button2" Content="Login/logoff" HorizontalAlignment="Left" Margin="860,63,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
     </Grid>
 </UserControl>
