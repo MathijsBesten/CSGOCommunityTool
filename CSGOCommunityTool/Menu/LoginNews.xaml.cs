@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CSGOCommunityTool.functions;
-using CSGOCommunityTool.functions;
+using CSGOCommunityTool.displays.loginScreen;
 using System.IO;
 
 namespace CSGOCommunityTool.Menu
@@ -79,25 +79,24 @@ namespace CSGOCommunityTool.Menu
             }
             else
             {
-                if (steamIDText.Text != "")
+                steamLogin loginWindow = new steamLogin();
+                loginWindow.ShowDialog();
+                if (loginWindow.DialogResult == true)
                 {
-                    string userId = steamIDText.Text;
-                    var profileInfo = functions.JSONReader.ReadJSON(playerDetailUrl + userId, public_properties.SteamProfile.playerStats, public_properties.SteamProfile.playerStatsEnd); // gets all information about profile
-                    string avatarImageLink = profileInfo[13].Insert(6, ":");
-                    BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
-                    steamNameBox.Text = profileInfo[3];
-                    avatarBox.Source = bitmapImage;
-                    ButtonLoginLogout.Content = "Logout";
-                }
-                else
-                {
-                    MessageBox.Show("You did not enter a steamID");
-                }
-
+                    string userId = loginWindow.enteredSteamID;
+                    var writeToFile = ProfileSaver_ProfileReader.checkForSteamIDInFile(userId);
+                    var activeSteamProfile = ProfileSaver_ProfileReader.checkForProfile();
+                    if (activeSteamProfile != "NoProfileFound" || activeSteamProfile != "NoProfileFile")
+                    {
+                        var profileInfo = functions.JSONReader.ReadJSON(playerDetailUrl + activeSteamProfile, public_properties.SteamProfile.playerStats, public_properties.SteamProfile.playerStatsEnd); // gets all information about profile
+                        string avatarImageLink = profileInfo[13].Insert(6, ":");
+                        BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
+                        steamNameBox.Text = profileInfo[3];
+                        avatarBox.Source = bitmapImage;
+                        ButtonLoginLogout.Content = "Logout";
+                    }
+                }            
             }
-
-
-            Console.WriteLine();
         }
 
         void ISwitchable.UtilizeState(object state)
