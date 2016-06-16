@@ -9,9 +9,20 @@
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="100" Margin="25,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="1227" Fill="#FFE4DBD9"/>
-        <Grid HorizontalAlignment="Left" Height="564" Margin="25,115,0,0" VerticalAlignment="Top" Width="1227"/>
+        <Grid HorizontalAlignment="Left" Height="564" Margin="25,110,0,0" VerticalAlignment="Top" Width="1227">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1139*"/>
+                <ColumnDefinition Width="88*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="#FFE4DBD9" HorizontalAlignment="Left" Height="564" Margin="1034,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="193" Grid.ColumnSpan="2"/>
+            <Label x:Name="lb_friendnumber" Content="lable" HorizontalAlignment="Left" Margin="1122,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="95" FontFamily="Comic Sans MS" FontSize="18.667" FontWeight="Bold"/>
+            <Label x:Name="lb_friend1" Content="Label" HorizontalAlignment="Left" Margin="1046,51,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="41" Width="130" FontFamily="Comic Sans MS" FontSize="18.667"/>
+            <Label x:Name="lb_friend2" Content="Label" HorizontalAlignment="Left" Margin="1046,92,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="124" Height="35" FontFamily="Comic Sans MS" FontSize="18.667"/>
+            <Label x:Name="lb_friend3" Content="Label" HorizontalAlignment="Left" Margin="1046,132,0,0" VerticalAlignment="Top" Width="93" Height="38" FontFamily="Comic Sans MS" FontSize="18.667"/>
+        </Grid>
         <Image x:Name="avatarBox2" HorizontalAlignment="Left" Height="80" Margin="1165,15,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="steamNameBox2" TextAlignment="Right" HorizontalAlignment="Left" Height="30" Margin="860,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
         <Button x:Name="Button2" Content="Login/logoff" HorizontalAlignment="Left" Margin="860,63,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
+        <Label x:Name="LB_Friend" Content="Friends" HorizontalAlignment="Left" Margin="1064,120,0,0" VerticalAlignment="Top" Height="37" Width="83" FontFamily="Comic Sans MS" FontSize="18.667" FontWeight="Bold"/>
     </Grid>
 </UserControl>
