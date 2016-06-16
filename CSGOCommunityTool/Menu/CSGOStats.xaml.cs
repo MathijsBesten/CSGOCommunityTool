@@ -1,5 +1,8 @@
-﻿using System;
+﻿using CSGOCommunityTool.displays.loginScreen;
+using CSGOCommunityTool.functions;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,24 +15,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CSGOCommunityTool.functions;
-using CSGOCommunityTool.displays.loginScreen;
-using System.IO;
 
 namespace CSGOCommunityTool.Menu
 {
-    public partial class LoginNewsPage : UserControl, ISwitchable
+    /// <summary>
+    /// Interaction logic for CSGOStats.xaml
+    /// </summary>
+    public partial class CSGOStats : UserControl
     {
+
         public static string LoggedInUser = "";
         public string playerDetailUrl = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=14A21E6B2EC8A4B857AA20CF416B38DE&steamids=";
         public string userFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "CSGOCommunityTool" + "\\" + "userdetails.txt";
         public static string steamAPIey = "14A21E6B2EC8A4B857AA20CF416B38DE";
-
-        public LoginNewsPage()
+        public CSGOStats()
         {
             InitializeComponent();
-            int count = 0;
-            string testAccount = "76561197988627193"; //OLOFMEISTER BOOSTMEISTER        
             string profile = ProfileSaver_ProfileReader.checkForProfile(); //check if there is anybody logged in
             if (File.Exists(userFilePath))
             {
@@ -41,46 +42,13 @@ namespace CSGOCommunityTool.Menu
                     BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
                     steamNameBox.Text = profileInfo[3];
                     avatarBox.Source = bitmapImage;
+                    LoggedInUser = steamID;
+                    XMLReader.generalXMLReader("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=14A21E6B2EC8A4B857AA20CF416B38DE&steamid=76561198035130499&format=xml");
                     ButtonLoginLogout.Content = "Logout";
+
                 }
             }
-
-            Funtions.NewsReader.newsReader();
-            foreach (var item in Funtions.NewsReader.allItems)
-            {
-                foreach (var stringObject in item)
-                {
-                    if (count == 0)
-                    {
-                        newsSpot1.Text = stringObject;
-                    }
-                    else if (count == 1)
-                    {
-                        newsSpot2.Text = stringObject;
-                    }
-                    else if (count == 2)
-                    {
-                        newsSpot3.Text = stringObject;
-                    }
-                    else if (count == 3)
-                    {
-                        newsSpot4.Text = stringObject;
-                    }
-                    else if (count == 4)
-                    {
-                        newsSpot5.Text = stringObject;
-                    }
-                    else if (count == 5)
-                    {
-                        newsSpot6.Text = stringObject;
-                    }
-                }
-                count++;
-            }
-
-
         }
-
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             if (ButtonLoginLogout.Content == "Logout")
@@ -106,16 +74,49 @@ namespace CSGOCommunityTool.Menu
                         BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
                         steamNameBox.Text = profileInfo[3];
                         avatarBox.Source = bitmapImage;
+                        LoggedInUser = activeSteamProfile;
+                        getAllCSGOStats();
                         ButtonLoginLogout.Content = "Logout";
                     }
                 }
             }
         }
-
-        void ISwitchable.UtilizeState(object state)
+        private void getAllCSGOStats()
         {
-            //
-        }   
+            if (LoggedInUser != "NoProfileFound" && LoggedInUser != "NoProfileFile" && LoggedInUser != "")
+            {
+                string CSGODataURL = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=14A21E6B2EC8A4B857AA20CF416B38DE&steamid=" + LoggedInUser;
+                Console.WriteLine("");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void MenuItem_Profile_click(object sender, RoutedEventArgs e)
         {
@@ -136,5 +137,6 @@ namespace CSGOCommunityTool.Menu
         {
             SideBarMenu.Visibility = Visibility.Collapsed;
         }
+
     }
 }

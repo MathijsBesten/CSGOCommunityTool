@@ -63,7 +63,7 @@ namespace CSGOCommunityTool.functions
             else
             {
                 string userdetails = File.ReadAllText(fullFilePath);
-                if (userdetails.Length == 17)
+                if (userdetails.Length != 0)
                 {
                     bool steamIDsAreTheSame = userdetails == steamID;
                     if (!steamIDsAreTheSame)
@@ -81,9 +81,10 @@ namespace CSGOCommunityTool.functions
                 else
                 {
                     StreamWriter file = new StreamWriter(fullFilePath);
+                    file.NewLine = "";
                     file.WriteLine(steamID);
                     file.Close();
-                    return 3; // there was nobody logged in - user correctly logged in 
+                    return 4 ; // there was nobody logged in - user correctly logged in 
                 }
             }
             return 0; // something fucked up :(
@@ -92,7 +93,7 @@ namespace CSGOCommunityTool.functions
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + "CSGOCommunityTool" + "\\" +  "userdetails.txt";
             File.WriteAllText(path, "");           
-        }
+            }
 
         public static string checkForProfile()
         {

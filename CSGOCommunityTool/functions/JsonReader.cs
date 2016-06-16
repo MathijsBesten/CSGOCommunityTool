@@ -6,11 +6,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using CSGOCommunityTool.functions;
+using Newtonsoft.Json;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace CSGOCommunityTool.functions
 {
     class JSONReader
     {
+        public static object HttpUtility { get; private set; }
+
         public static List<string> ReadJSON (string jsonURL, List<string> stringList,string endString)
         {
             var statsList = new List<string>();
@@ -43,9 +48,8 @@ namespace CSGOCommunityTool.functions
                         statsList.Add(stat);
                     }
                 }
-
             }
             return statsList;
-        }   
+        }
     }
 }

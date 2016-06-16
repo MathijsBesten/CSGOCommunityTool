@@ -97,6 +97,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -116,7 +117,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="functions\ProfileSaver_ProfileReader.cs" />
+    <Compile Include="functions\XMLReader.cs" />
     <Compile Include="ISwitchable.cs" />
+    <Compile Include="Menu\CSGOStats.xaml.cs">
+      <DependentUpon>CSGOStats.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Menu\LoginNews.xaml.cs">
       <DependentUpon>LoginNews.xaml</DependentUpon>
     </Compile>
@@ -127,12 +132,17 @@
     <Compile Include="functions\HTMLParse.cs" />
     <Compile Include="functions\JSONReader.cs" />
     <Compile Include="functions\LocalConfigFile.cs" />
+    <Compile Include="public properties\Stat.cs" />
     <Compile Include="public properties\SteamProfile.cs" />
     <Compile Include="Steam\loginFunction.cs" />
     <Compile Include="displays\loginScreen\SteamLogin.xaml.cs">
       <DependentUpon>SteamLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
+    <Page Include="Menu\CSGOStats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Menu\ProfileCSGOStats.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

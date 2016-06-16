@@ -52,5 +52,13 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         <Image x:Name="logoBox" HorizontalAlignment="Left" Height="80" Margin="20,-250,0,0" VerticalAlignment="Top" Width="85"/>
         <Button x:Name="ButtonLoginLogout" Content="Login" Grid.Column="2" HorizontalAlignment="Left" Margin="232,-202,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="0" Margin="-125,-385,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="5"/>
+        <Menu x:Name="SideBarMenu" Visibility="Collapsed" HorizontalAlignment="Left" Height="700" Margin="-10,-300,0,0" VerticalAlignment="Top" Width="150" Grid.RowSpan="2" MouseLeave="SideBarMenu_MouseLeave">
+            <MenuItem Header="Home" Height="105" Width="150"/>
+            <MenuItem Header="Profile" Height="105" Width="150" Click="MenuItem_Profile_click" />
+            <MenuItem Header="statistics" Height="105" Width="150" Click="MenuItem_Statistics_click"/>
+            <MenuItem Header="skins" Height="105" Width="150"/>
+            <MenuItem Header="Competitive" Height="105" Width="150"/>
+        </Menu>
+        <Rectangle x:Name="sideBarTriggerArea" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="700" Margin="-10,-300,0,0" Stroke="Black" VerticalAlignment="Top" Width="25" Grid.RowSpan="2" Opacity="0.005" MouseEnter="sideBarTriggerArea_MouseEnter"/>
     </Grid>
 </UserControl>
