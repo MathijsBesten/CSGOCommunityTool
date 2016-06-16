@@ -32,6 +32,9 @@ namespace CSGOCommunityTool.Menu
             UserId = functions.ProfileSaver_ProfileReader.checkForProfile();
             FriendList();
             lb_friendnumber.Content = friendlist.Count().ToString();
+            lb_friend1.Content = friendlist[0][3];
+            lb_friend2.Content = friendlist[1][3];
+            lb_friend3.Content = friendlist[2][3];
 
         }
         public async void FriendList()
