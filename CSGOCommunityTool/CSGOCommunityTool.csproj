@@ -132,7 +132,6 @@
     <Compile Include="functions\HTMLParse.cs" />
     <Compile Include="functions\JSONReader.cs" />
     <Compile Include="functions\LocalConfigFile.cs" />
-    <Compile Include="public properties\Stat.cs" />
     <Compile Include="public properties\SteamProfile.cs" />
     <Compile Include="Steam\loginFunction.cs" />
     <Compile Include="displays\loginScreen\SteamLogin.xaml.cs">

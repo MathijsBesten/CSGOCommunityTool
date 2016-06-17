@@ -1,5 +1,6 @@
 ﻿using CSGOCommunityTool.displays.loginScreen;
 using CSGOCommunityTool.functions;
+using CSGOCommunityTool.public_properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,10 +43,10 @@ namespace CSGOCommunityTool.Menu
                     BitmapImage bitmapImage = new BitmapImage(new Uri(avatarImageLink));
                     steamNameBox.Text = profileInfo[3];
                     avatarBox.Source = bitmapImage;
-                    LoggedInUser = steamID;
-                    XMLReader.generalXMLReader("http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=14A21E6B2EC8A4B857AA20CF416B38DE&steamid=76561198035130499&format=xml");
                     ButtonLoginLogout.Content = "Logout";
-
+                    LoggedInUser = steamID; // start getting csgo stats
+                    string csgoStatsLink = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=14A21E6B2EC8A4B857AA20CF416B38DE&steamid=" + LoggedInUser;
+                    Console.WriteLine("");
                 }
             }
         }
@@ -126,6 +127,11 @@ namespace CSGOCommunityTool.Menu
         private void MenuItem_Statistics_click(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new CSGOStats());
+        }
+
+        private void MenuItem_Home_click(object sender, RoutedEventArgs e)
+        {
+            Switcher.Switch(new LoginNewsPage());
         }
 
         private void sideBarTriggerArea_MouseEnter(object sender, MouseEventArgs e)

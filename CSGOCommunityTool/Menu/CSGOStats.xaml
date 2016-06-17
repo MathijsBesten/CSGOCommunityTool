@@ -19,7 +19,7 @@
         <Button x:Name="ButtonLoginLogout" Content="Login" HorizontalAlignment="Left" Margin="1064,85,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="0" Margin="-125,-385,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="5"/>
         <Menu x:Name="SideBarMenu" Visibility="Collapsed" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="150" Grid.RowSpan="2" MouseLeave="SideBarMenu_MouseLeave">
-            <MenuItem Header="Home" Height="105" Width="150"/>
+            <MenuItem Header="Home" Height="105" Width="150" Click=" MenuItem_Home_click"/>
             <MenuItem Header="Profile" Height="105" Width="150" Click="MenuItem_Profile_click" />
             <MenuItem Header="statistics" Height="105" Width="150" Click="MenuItem_Statistics_click"/>
             <MenuItem Header="skins" Height="105" Width="150"/>

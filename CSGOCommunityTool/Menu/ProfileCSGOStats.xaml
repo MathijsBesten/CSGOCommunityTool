@@ -22,7 +22,15 @@
         </Grid>
         <Image x:Name="avatarBox2" HorizontalAlignment="Left" Height="80" Margin="1165,15,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="steamNameBox2" TextAlignment="Right" HorizontalAlignment="Left" Height="30" Margin="860,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" Background="Transparent" FontSize="16" BorderThickness="0" FontFamily="Comic Sans MS" IsReadOnly="True"/>
-        <Button x:Name="ButtonLoginLogout" Content="Login/logoff" HorizontalAlignment="Left" Margin="860,63,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
+        <Button x:Name="ButtonLoginLogout" Content="logout" HorizontalAlignment="Left" Margin="1039,50,0,0" VerticalAlignment="Top" Width="81" Height="32" Click="button1_Click" FontFamily="Comic Sans MS"/>
         <Label x:Name="LB_Friend" Content="Friends" HorizontalAlignment="Left" Margin="1074,120,0,0" VerticalAlignment="Top" Height="37" Width="83" FontFamily="Comic Sans MS" FontSize="18.667" FontWeight="Bold"/>
+        <Menu x:Name="SideBarMenu" Visibility="Collapsed" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="150" Grid.RowSpan="2" MouseLeave="SideBarMenu_MouseLeave">
+            <MenuItem Header="Home" Height="105" Width="150" Click="MenuItem_Home_click"/>
+            <MenuItem Header="Profile" Height="105" Width="150"/>
+            <MenuItem Header="statistics" Height="105" Width="150" Click="MenuItem_Statistics_click"/>
+            <MenuItem Header="skins" Height="105" Width="150"/>
+            <MenuItem Header="Competitive" Height="105" Width="150"/>
+        </Menu>
+        <Rectangle x:Name="sideBarTriggerArea" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="700" Stroke="Black" VerticalAlignment="Top" Width="25" Grid.RowSpan="2" Opacity="0.005" MouseEnter="sideBarTriggerArea_MouseEnter"/>
     </Grid>
 </UserControl>
