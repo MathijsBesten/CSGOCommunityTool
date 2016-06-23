@@ -45,7 +45,9 @@ namespace CSGOCommunityTool.Menu
                     avatarBox.Source = bitmapImage;
                     ButtonLoginLogout.Content = "Logout";
                     LoggedInUser = steamID; // start getting csgo stats
-                    string csgoStatsLink = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=14A21E6B2EC8A4B857AA20CF416B38DE&steamid=" + LoggedInUser;
+                    string csgoStatsLink = "http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=14A21E6B2EC8A4B857AA20CF416B38DE&steamid=" + LoggedInUser + "&format=xml";
+                    string test = "te" + "st";
+                    XMLReader.generalXMLReader(csgoStatsLink);
                     Console.WriteLine("");
                 }
             }

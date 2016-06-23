@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace CSGOCommunityTool.functions
 {
@@ -12,19 +13,26 @@ namespace CSGOCommunityTool.functions
     {
         public static void generalXMLReader(string url)
         {
-            WebClient client = new WebClient();
-            XmlDocument xmlDoc = new XmlDocument();
-            string xmlData = client.DownloadString(url);
-            xmlData = HTMLParse.removeEscapeCharacters(xmlData);
-            xmlDoc.LoadXml(xmlData);
+            List<string> variables = new List<string>();
+            string webPageURL = url;
+            XmlTextReader reader = new XmlTextReader(webPageURL);
 
-            string xpath = xmlData;
-            var nodes = xmlDoc.SelectNodes(xpath);
-
-            foreach (XmlNode childrenNode in nodes)
+            while (reader.Read())
             {
-                Console.WriteLine(childrenNode);
+                if (reader.Value.Contains("\n") || reader.Value.Contains("\t"))
+                {
+
+                }
+                else if (reader.Value == "")
+                {
+
+                }
+                else
+                {
+                    variables.Add(reader.Value);
+                }
             }
+            Console.WriteLine("");
         }
     }
 }

@@ -26,6 +26,7 @@ namespace CSGOCommunityTool.functions
                 int StartIndex, EndIndex;
                 string urlData = webClient.DownloadString(jsonURL);
                 urlData = Regex.Replace(urlData, @"\t|\n|\r", "");
+                urlData = HTMLParse.removeEscapeCharacters(urlData);
                 foreach (var item in stringList)
                 {
                     foreach (Match match in Regex.Matches(urlData,item))

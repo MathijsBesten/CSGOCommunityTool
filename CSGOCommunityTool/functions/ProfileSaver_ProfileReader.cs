@@ -22,7 +22,7 @@ namespace CSGOCommunityTool.functions
             if (!System.IO.Directory.Exists(fullFolderPath))
             {
                 System.IO.Directory.CreateDirectory(MydocumentsPath + "\\" + CSGOSaveFolder);
-                File.Create(fullFilePath);
+                File.Create(fullFilePath).Close();
                 StreamWriter file = new StreamWriter(fullFilePath);
                 file.WriteLine(steamID);
                 file.Close();
@@ -32,7 +32,7 @@ namespace CSGOCommunityTool.functions
             {
                 if (!File.Exists(fullFilePath))
                 {
-                    File.Create(fullFilePath);
+                    File.Create(fullFilePath).Close();
                     StreamWriter file = new StreamWriter(fullFilePath);
                     file.WriteLine(steamID);
                     file.Close();
